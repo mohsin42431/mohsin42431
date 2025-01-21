@@ -1,106 +1,21 @@
-- 👋 Hi, I’m @mohsin42431
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
+Stack Implementation in C#
 
-<!---
-mohsin42431/mohsin42431 is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
-using System;
+Description
 
-public class StackNode
-{
-    public int Data;
-    public StackNode Next;
+This project demonstrates the implementation of a stack data structure using a singly linked list in C#. It includes basic stack operations such as Push, Pop, Peek, checking if the stack is empty, and displaying the stack elements.
 
-    public StackNode(int data)
-    {
-        Data = data;
-        Next = null;
-    }
-}
+Features
 
-public class Stack
-{
-    private StackNode top;
+1. Push: Adds an element to the top of the stack.
 
-    public Stack()
-    {
-        top = null;
-    }
 
-    // Push operation
-    public void Push(int value)
-    {
-        StackNode newNode = new StackNode(value);
-        newNode.Next = top;
-        top = newNode;
-    }
+2. Pop: Removes and returns the top element from the stack.
 
-    // Pop operation
-    public int Pop()
-    {
-        if (top == null)
-        {
-            Console.WriteLine("Stack is empty!");
-            return -1;
-        }
-        int poppedValue = top.Data;
-        top = top.Next;
-        return poppedValue;
-    }
 
-    // Peek operation
-    public int Peek()
-    {
-        if (top == null)
-        {
-            Console.WriteLine("Stack is empty!");
-            return -1;
-        }
-        return top.Data;
-    }
+3. Peek: Returns the top element without removing it.
 
-    // Check if the stack is empty
-    public bool IsEmpty()
-    {
-        return top == null;
-    }
 
-    // Display stack
-    public void Display()
-    {
-        StackNode current = top;
-        while (current != null)
-        {
-            Console.Write(current.Data + " ");
-            current = current.Next;
-        }
-        Console.WriteLine();
-    }
-}
+4. IsEmpty: Checks if the stack is empty.
 
-class Program
-{
-    static void Main()
-    {
-        Stack stack = new Stack();
 
-        stack.Push(10);
-        stack.Push(20);
-        stack.Push(30);
-        stack.Push(40);
-
-        Console.WriteLine("Stack after pushing elements:");
-        stack.Display();
-
-        Console.WriteLine("Peek: " + stack.Peek());
-        Console.WriteLine("Pop: " + stack.Pop());
-        Console.WriteLine("Stack after popping an element:");
-        stack.Display();
-    }
-}
+5. Display: Prints all elements of the stack.
